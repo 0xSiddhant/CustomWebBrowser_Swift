@@ -20,6 +20,14 @@ class NewTabViewController: BaseViewController {
     @IBOutlet weak var searchView: BaseSearchBar!
     @IBOutlet weak var webView: WKWebView!
     
+    @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var addNewTabBtn: UIButton!
+    @IBOutlet weak var homeBtn: UIButton!
+    @IBOutlet weak var moreBtn: UIButton!
+    
+    @IBOutlet var btnCollections: [UIButton]!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -33,6 +41,32 @@ class NewTabViewController: BaseViewController {
             self?.presenter?.generateURL(with: str)
         }
         webView.navigationDelegate = self
+        backBtn.setTitle("", for: .normal)
+        initView()
+    }
+    
+    private func initView() {
+        for btn in btnCollections {
+            btn.setTitle("", for: .normal)
+            btn.tintColor = .primaryColor
+        }
+    }
+    
+    
+    //MARK: - IBActions
+    @IBAction func backBtnAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func nextBtnAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func addNewTabBtnAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func homeBtnAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func moreBtnAction(_ sender: UIButton) {
     }
 }
 

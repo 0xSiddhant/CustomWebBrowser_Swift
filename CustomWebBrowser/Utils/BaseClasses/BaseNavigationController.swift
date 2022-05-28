@@ -9,7 +9,7 @@ import UIKit
 
 class BaseNavigationController: UINavigationController, UINavigationControllerDelegate {
     
-    let barColor = UIColor(red: 252/255.0, green: 138/255.0, blue: 21/255.0, alpha: 1)
+//    let barColor = UIColor(red: 252/255.0, green: 138/255.0, blue: 21/255.0, alpha: 1)
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +17,7 @@ class BaseNavigationController: UINavigationController, UINavigationControllerDe
         
         let coloredAppearance = UINavigationBarAppearance()
         coloredAppearance.configureWithOpaqueBackground()
-        coloredAppearance.backgroundColor = barColor
+        coloredAppearance.backgroundColor = .secondaryColor
         coloredAppearance.titleTextAttributes = [.foregroundColor: UIColor.white,
                                                  .font: UIFont.boldSystemFont(ofSize: 17)]
         coloredAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white,

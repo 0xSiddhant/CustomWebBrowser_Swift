@@ -47,6 +47,8 @@ class BaseSearchBar: UIView {
         textField.clipsToBounds = true
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: textField.frame.height))
         textField.leftViewMode = .always
+        
+        voiceSearchBtn.tintColor = .primaryColor
     }
     
     @IBAction func voiceSearchAction(_ sender: UIButton) {

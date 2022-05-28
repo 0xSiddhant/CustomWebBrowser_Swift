@@ -18,17 +18,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t7E-M7-QA1">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="789"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1N-n4-Z4L" customClass="BaseSearchBar" customModule="CustomWebBrowser" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="690"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="302"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="250" constant="50" id="taP-Fq-Zgl"/>
                                         </constraints>
                                     </view>
                                     <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7B-QI-cca">
-                                        <rect key="frame" x="0.0" y="690" width="414" height="128"/>
+                                        <rect key="frame" x="0.0" y="302" width="414" height="487"/>
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <wkWebViewConfiguration key="configuration">
                                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -37,27 +37,108 @@
                                     </wkWebView>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMx-NX-Gba">
+                                <rect key="frame" x="0.0" y="833" width="414" height="63"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="n0g-ZL-sWE">
+                                        <rect key="frame" x="4" y="2" width="406" height="45"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWl-Yn-jp0">
+                                                <rect key="frame" x="0.0" y="0.0" width="78" height="45"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="gus-9Z-p03"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system" title=""/>
+                                                <connections>
+                                                    <action selector="backBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uUy-no-bLy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9VO-bU-uQv">
+                                                <rect key="frame" x="82" y="0.0" width="78" height="45"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="arrow.forward" catalog="system"/>
+                                                <connections>
+                                                    <action selector="nextBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tzh-0f-FHx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8O-xC-9XS">
+                                                <rect key="frame" x="164" y="0.0" width="78" height="45"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="plus.circle.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="addNewTabBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eSn-rt-3uo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXF-az-2m8">
+                                                <rect key="frame" x="246" y="0.0" width="78" height="45"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="house" catalog="system"/>
+                                                <connections>
+                                                    <action selector="homeBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lCh-fm-Zah"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eC8-IZ-5fM">
+                                                <rect key="frame" x="328" y="0.0" width="78" height="45"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="ellipsis" catalog="system"/>
+                                                <connections>
+                                                    <action selector="moreBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2SS-Oc-UUn"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="n0g-ZL-sWE" secondAttribute="trailing" constant="4" id="4z9-CX-8yl"/>
+                                    <constraint firstItem="n0g-ZL-sWE" firstAttribute="leading" secondItem="CMx-NX-Gba" secondAttribute="leading" constant="4" id="J42-yq-ivQ"/>
+                                    <constraint firstItem="n0g-ZL-sWE" firstAttribute="top" secondItem="CMx-NX-Gba" secondAttribute="top" constant="2" id="emL-sH-7yF"/>
+                                    <constraint firstAttribute="bottom" secondItem="n0g-ZL-sWE" secondAttribute="bottom" constant="16" id="s0M-VE-o28"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VZV-bN-BlB"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="CMx-NX-Gba" secondAttribute="trailing" id="01n-Iv-WHG"/>
+                            <constraint firstAttribute="bottom" secondItem="CMx-NX-Gba" secondAttribute="bottom" id="K4N-fg-QLe"/>
+                            <constraint firstItem="CMx-NX-Gba" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KAR-SB-0cv"/>
                             <constraint firstItem="t7E-M7-QA1" firstAttribute="leading" secondItem="VZV-bN-BlB" secondAttribute="leading" id="LBF-2A-7GS"/>
                             <constraint firstAttribute="trailing" secondItem="t7E-M7-QA1" secondAttribute="trailing" id="X7c-hP-NPS"/>
-                            <constraint firstItem="VZV-bN-BlB" firstAttribute="bottom" secondItem="t7E-M7-QA1" secondAttribute="bottom" id="nK8-pj-CrE"/>
                             <constraint firstItem="t7E-M7-QA1" firstAttribute="top" secondItem="VZV-bN-BlB" secondAttribute="top" id="w5t-TD-VBG"/>
+                            <constraint firstItem="CMx-NX-Gba" firstAttribute="top" secondItem="t7E-M7-QA1" secondAttribute="bottom" id="wWO-Iz-T3i"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addNewTabBtn" destination="a8O-xC-9XS" id="La2-d9-xZu"/>
+                        <outlet property="backBtn" destination="GWl-Yn-jp0" id="djX-3r-xt9"/>
+                        <outlet property="homeBtn" destination="JXF-az-2m8" id="96v-gR-ZsH"/>
+                        <outlet property="moreBtn" destination="eC8-IZ-5fM" id="AvL-bE-7fe"/>
+                        <outlet property="nextBtn" destination="9VO-bU-uQv" id="Av4-83-dH0"/>
                         <outlet property="searchView" destination="i1N-n4-Z4L" id="tSC-up-QSh"/>
                         <outlet property="webView" destination="H7B-QI-cca" id="JUW-2w-tBQ"/>
+                        <outletCollection property="btnCollections" destination="a8O-xC-9XS" collectionClass="NSMutableArray" id="Q75-Y3-Hmt"/>
+                        <outletCollection property="btnCollections" destination="eC8-IZ-5fM" collectionClass="NSMutableArray" id="Chl-cu-OgO"/>
+                        <outletCollection property="btnCollections" destination="JXF-az-2m8" collectionClass="NSMutableArray" id="J0D-nn-cjr"/>
+                        <outletCollection property="btnCollections" destination="GWl-Yn-jp0" collectionClass="NSMutableArray" id="n8i-hU-PkY"/>
+                        <outletCollection property="btnCollections" destination="9VO-bU-uQv" collectionClass="NSMutableArray" id="VaB-BA-5zd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="114"/>
+            <point key="canvasLocation" x="131.8840579710145" y="113.83928571428571"/>
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="arrow.forward" catalog="system" width="128" height="98"/>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
