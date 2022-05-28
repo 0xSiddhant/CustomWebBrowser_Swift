@@ -16,6 +16,18 @@
 		9CE593C5284200BE0012EA87 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE593C4284200BE0012EA87 /* SplashViewController.swift */; };
 		9CE5940D28420C2A0012EA87 /* MainLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CE5940C28420C2A0012EA87 /* MainLocalization.strings */; };
 		9CE5940F28420D240012EA87 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9CE5940E28420D240012EA87 /* README.md */; };
+		9CFD66A628420FA9009353B5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66A028420FA9009353B5 /* BaseViewController.swift */; };
+		9CFD66A728420FA9009353B5 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66A128420FA9009353B5 /* BaseInteractor.swift */; };
+		9CFD66A828420FA9009353B5 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66A228420FA9009353B5 /* BasePresenter.swift */; };
+		9CFD66A928420FA9009353B5 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66A328420FA9009353B5 /* BaseNavigationController.swift */; };
+		9CFD66AA28420FA9009353B5 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66A428420FA9009353B5 /* BaseView.swift */; };
+		9CFD66AC28421434009353B5 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CFD66AB28421434009353B5 /* Colors.xcassets */; };
+		9CFD66B428422A96009353B5 /* NewTabStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CFD66AE28422A96009353B5 /* NewTabStoryboard.storyboard */; };
+		9CFD66B528422A96009353B5 /* NewTabPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66AF28422A96009353B5 /* NewTabPresenter.swift */; };
+		9CFD66B628422A96009353B5 /* NewTabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66B028422A96009353B5 /* NewTabRouter.swift */; };
+		9CFD66B728422A96009353B5 /* NewTabModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66B128422A96009353B5 /* NewTabModels.swift */; };
+		9CFD66B828422A96009353B5 /* NewTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66B228422A96009353B5 /* NewTabViewController.swift */; };
+		9CFD66B928422A96009353B5 /* NewTabInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66B328422A96009353B5 /* NewTabInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +42,18 @@
 		9CE593C4284200BE0012EA87 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		9CE5940C28420C2A0012EA87 /* MainLocalization.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = MainLocalization.strings; sourceTree = "<group>"; };
 		9CE5940E28420D240012EA87 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9CFD66A028420FA9009353B5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9CFD66A128420FA9009353B5 /* BaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
+		9CFD66A228420FA9009353B5 /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		9CFD66A328420FA9009353B5 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		9CFD66A428420FA9009353B5 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		9CFD66AB28421434009353B5 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		9CFD66AE28422A96009353B5 /* NewTabStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewTabStoryboard.storyboard; sourceTree = "<group>"; };
+		9CFD66AF28422A96009353B5 /* NewTabPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTabPresenter.swift; sourceTree = "<group>"; };
+		9CFD66B028422A96009353B5 /* NewTabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTabRouter.swift; sourceTree = "<group>"; };
+		9CFD66B128422A96009353B5 /* NewTabModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTabModels.swift; sourceTree = "<group>"; };
+		9CFD66B228422A96009353B5 /* NewTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTabViewController.swift; sourceTree = "<group>"; };
+		9CFD66B328422A96009353B5 /* NewTabInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTabInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +103,7 @@
 		9CE593BF2841FE1E0012EA87 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				9CFD66AD28422A82009353B5 /* NewTab */,
 				9CE593C32842008F0012EA87 /* Splash */,
 			);
 			path = Scene;
@@ -87,6 +112,7 @@
 		9CE593C02841FE2D0012EA87 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9CFD669E28420FA9009353B5 /* BaseClasses */,
 				9CE5940B28420C050012EA87 /* Localization */,
 			);
 			path = Utils;
@@ -96,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				9CE593B42841FCDC0012EA87 /* Assets.xcassets */,
+				9CFD66AB28421434009353B5 /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -146,6 +173,31 @@
 				9CE5940C28420C2A0012EA87 /* MainLocalization.strings */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		9CFD669E28420FA9009353B5 /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				9CFD66A028420FA9009353B5 /* BaseViewController.swift */,
+				9CFD66A128420FA9009353B5 /* BaseInteractor.swift */,
+				9CFD66A228420FA9009353B5 /* BasePresenter.swift */,
+				9CFD66A328420FA9009353B5 /* BaseNavigationController.swift */,
+				9CFD66A428420FA9009353B5 /* BaseView.swift */,
+			);
+			path = BaseClasses;
+			sourceTree = "<group>";
+		};
+		9CFD66AD28422A82009353B5 /* NewTab */ = {
+			isa = PBXGroup;
+			children = (
+				9CFD66AE28422A96009353B5 /* NewTabStoryboard.storyboard */,
+				9CFD66AF28422A96009353B5 /* NewTabPresenter.swift */,
+				9CFD66B028422A96009353B5 /* NewTabRouter.swift */,
+				9CFD66B128422A96009353B5 /* NewTabModels.swift */,
+				9CFD66B228422A96009353B5 /* NewTabViewController.swift */,
+				9CFD66B328422A96009353B5 /* NewTabInteractor.swift */,
+			);
+			path = NewTab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,7 +261,9 @@
 				9CE593B82841FCDC0012EA87 /* LaunchScreen.storyboard in Resources */,
 				9CE593B52841FCDC0012EA87 /* Assets.xcassets in Resources */,
 				9CE5940F28420D240012EA87 /* README.md in Resources */,
+				9CFD66AC28421434009353B5 /* Colors.xcassets in Resources */,
 				9CE5940D28420C2A0012EA87 /* MainLocalization.strings in Resources */,
+				9CFD66B428422A96009353B5 /* NewTabStoryboard.storyboard in Resources */,
 				9CE593B32841FCD90012EA87 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,9 +276,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CE593B02841FCD90012EA87 /* ViewController.swift in Sources */,
+				9CFD66A828420FA9009353B5 /* BasePresenter.swift in Sources */,
+				9CFD66B728422A96009353B5 /* NewTabModels.swift in Sources */,
+				9CFD66B628422A96009353B5 /* NewTabRouter.swift in Sources */,
 				9CE593AC2841FCD90012EA87 /* AppDelegate.swift in Sources */,
+				9CFD66B928422A96009353B5 /* NewTabInteractor.swift in Sources */,
+				9CFD66B528422A96009353B5 /* NewTabPresenter.swift in Sources */,
 				9CE593AE2841FCD90012EA87 /* SceneDelegate.swift in Sources */,
 				9CE593C5284200BE0012EA87 /* SplashViewController.swift in Sources */,
+				9CFD66A928420FA9009353B5 /* BaseNavigationController.swift in Sources */,
+				9CFD66AA28420FA9009353B5 /* BaseView.swift in Sources */,
+				9CFD66A628420FA9009353B5 /* BaseViewController.swift in Sources */,
+				9CFD66B828422A96009353B5 /* NewTabViewController.swift in Sources */,
+				9CFD66A728420FA9009353B5 /* BaseInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
