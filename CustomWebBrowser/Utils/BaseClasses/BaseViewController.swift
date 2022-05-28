@@ -6,14 +6,18 @@
 //
 
 import UIKit
+import WebKit
 
 class BaseViewController: UIViewController {
     var completionSegue: (BaseViewController) -> Void  = { _ in }
     var identifier: String!
     weak var scrollView: UIScrollView?
     var documentUrl: URL?
-    var searchTimer: Timer?
-    var searchData: (seconds: Int, progessView: UIProgressView, messageLbl: UILabel)?
+    
+    lazy var webView: WKWebView = {
+        let webView = WKWebView(frame: .zero, configuration: WKCustomConfigurator.create())
+        return webView
+    }()
     
     open override func viewDidLoad() {
         super.viewDidLoad()

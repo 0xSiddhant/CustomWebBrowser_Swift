@@ -21,20 +21,12 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="789"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1N-n4-Z4L" customClass="BaseSearchBar" customModule="CustomWebBrowser" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="302"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="789"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="250" constant="50" id="taP-Fq-Zgl"/>
                                         </constraints>
                                     </view>
-                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H7B-QI-cca">
-                                        <rect key="frame" x="0.0" y="302" width="414" height="487"/>
-                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <wkWebViewConfiguration key="configuration">
-                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                            <wkPreferences key="preferences"/>
-                                        </wkWebViewConfiguration>
-                                    </wkWebView>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMx-NX-Gba">
@@ -116,11 +108,11 @@
                     <connections>
                         <outlet property="addNewTabBtn" destination="a8O-xC-9XS" id="La2-d9-xZu"/>
                         <outlet property="backBtn" destination="GWl-Yn-jp0" id="djX-3r-xt9"/>
+                        <outlet property="contentStackView" destination="t7E-M7-QA1" id="UAJ-BV-OXv"/>
                         <outlet property="homeBtn" destination="JXF-az-2m8" id="96v-gR-ZsH"/>
                         <outlet property="moreBtn" destination="eC8-IZ-5fM" id="AvL-bE-7fe"/>
                         <outlet property="nextBtn" destination="9VO-bU-uQv" id="Av4-83-dH0"/>
                         <outlet property="searchView" destination="i1N-n4-Z4L" id="tSC-up-QSh"/>
-                        <outlet property="webView" destination="H7B-QI-cca" id="JUW-2w-tBQ"/>
                         <outletCollection property="btnCollections" destination="a8O-xC-9XS" collectionClass="NSMutableArray" id="Q75-Y3-Hmt"/>
                         <outletCollection property="btnCollections" destination="eC8-IZ-5fM" collectionClass="NSMutableArray" id="Chl-cu-OgO"/>
                         <outletCollection property="btnCollections" destination="JXF-az-2m8" collectionClass="NSMutableArray" id="J0D-nn-cjr"/>

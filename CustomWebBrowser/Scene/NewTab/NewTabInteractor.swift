@@ -22,7 +22,7 @@ final class NewTabInteractor: BaseInteractor, NewTabInteractorProtocol {
         if str.starts(with: "http") {
             generateURLRequest(urlStr: str)
         } else if str.starts(with: "www") {
-            let finalStr = "https:\\\(str)"
+            let finalStr = "https://\(str)"
             generateURLRequest(urlStr: finalStr)
         } else {
             let str = generateGoogleSearchURL(with: str)
@@ -32,7 +32,10 @@ final class NewTabInteractor: BaseInteractor, NewTabInteractorProtocol {
     
     private func generateGoogleSearchURL(with str: String) -> String {
         let urlStr = "\(URLConstants.googleSearch.rawValue)\(str)"
-        return urlStr
+        if let str = urlStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+            return str
+        }
+        return urlStr.replacingOccurrences(of: " ", with: URLStandard.replaceWhiteSpace.rawValue)
     }
     
     private func generateURLRequest(urlStr: String) {

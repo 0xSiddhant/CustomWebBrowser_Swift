@@ -16,6 +16,10 @@
 		9CE593C5284200BE0012EA87 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE593C4284200BE0012EA87 /* SplashViewController.swift */; };
 		9CE5940D28420C2A0012EA87 /* MainLocalization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CE5940C28420C2A0012EA87 /* MainLocalization.strings */; };
 		9CE5940F28420D240012EA87 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9CE5940E28420D240012EA87 /* README.md */; };
+		9CE8AC9F284298AB003ECEC7 /* WKWebView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE8AC9E284298AB003ECEC7 /* WKWebView+Extension.swift */; };
+		9CE8ACA12842AF61003ECEC7 /* URLStandard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE8ACA02842AF61003ECEC7 /* URLStandard.swift */; };
+		9CE8ACA42842B860003ECEC7 /* WKCustomConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE8ACA32842B860003ECEC7 /* WKCustomConfigurator.swift */; };
+		9CE8ACA62842B940003ECEC7 /* WKCustomScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE8ACA52842B940003ECEC7 /* WKCustomScript.swift */; };
 		9CFD66A628420FA9009353B5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66A028420FA9009353B5 /* BaseViewController.swift */; };
 		9CFD66A728420FA9009353B5 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66A128420FA9009353B5 /* BaseInteractor.swift */; };
 		9CFD66A828420FA9009353B5 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66A228420FA9009353B5 /* BasePresenter.swift */; };
@@ -47,6 +51,10 @@
 		9CE593C4284200BE0012EA87 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		9CE5940C28420C2A0012EA87 /* MainLocalization.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = MainLocalization.strings; sourceTree = "<group>"; };
 		9CE5940E28420D240012EA87 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9CE8AC9E284298AB003ECEC7 /* WKWebView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+Extension.swift"; sourceTree = "<group>"; };
+		9CE8ACA02842AF61003ECEC7 /* URLStandard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLStandard.swift; sourceTree = "<group>"; };
+		9CE8ACA32842B860003ECEC7 /* WKCustomConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCustomConfigurator.swift; sourceTree = "<group>"; };
+		9CE8ACA52842B940003ECEC7 /* WKCustomScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCustomScript.swift; sourceTree = "<group>"; };
 		9CFD66A028420FA9009353B5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9CFD66A128420FA9009353B5 /* BaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
 		9CFD66A228420FA9009353B5 /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
@@ -122,6 +130,7 @@
 		9CE593C02841FE2D0012EA87 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9CE8ACA22842B842003ECEC7 /* Settings */,
 				9CFD66C328423D5E009353B5 /* Extensions */,
 				9CFD66C028423ADD009353B5 /* Constants */,
 				9CFD66BA28422D49009353B5 /* CustomUI */,
@@ -188,6 +197,15 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		9CE8ACA22842B842003ECEC7 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9CE8ACA32842B860003ECEC7 /* WKCustomConfigurator.swift */,
+				9CE8ACA52842B940003ECEC7 /* WKCustomScript.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		9CFD669E28420FA9009353B5 /* BaseClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				9CFD66C128423AED009353B5 /* URLConstants.swift */,
+				9CE8ACA02842AF61003ECEC7 /* URLStandard.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -259,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				9CFD66C8284247F8009353B5 /* UIColor+Extension.swift */,
+				9CE8AC9E284298AB003ECEC7 /* WKWebView+Extension.swift */,
 			);
 			path = UIExtensions;
 			sourceTree = "<group>";
@@ -339,6 +359,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CE8ACA12842AF61003ECEC7 /* URLStandard.swift in Sources */,
+				9CE8ACA62842B940003ECEC7 /* WKCustomScript.swift in Sources */,
 				9CE593B02841FCD90012EA87 /* ViewController.swift in Sources */,
 				9CFD66A828420FA9009353B5 /* BasePresenter.swift in Sources */,
 				9CFD66B728422A96009353B5 /* NewTabModels.swift in Sources */,
@@ -355,6 +377,8 @@
 				9CFD66A928420FA9009353B5 /* BaseNavigationController.swift in Sources */,
 				9CFD66AA28420FA9009353B5 /* BaseView.swift in Sources */,
 				9CFD66A628420FA9009353B5 /* BaseViewController.swift in Sources */,
+				9CE8ACA42842B860003ECEC7 /* WKCustomConfigurator.swift in Sources */,
+				9CE8AC9F284298AB003ECEC7 /* WKWebView+Extension.swift in Sources */,
 				9CFD66B828422A96009353B5 /* NewTabViewController.swift in Sources */,
 				9CFD66A728420FA9009353B5 /* BaseInteractor.swift in Sources */,
 			);
