@@ -28,6 +28,10 @@
 		9CFD66B728422A96009353B5 /* NewTabModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66B128422A96009353B5 /* NewTabModels.swift */; };
 		9CFD66B828422A96009353B5 /* NewTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66B228422A96009353B5 /* NewTabViewController.swift */; };
 		9CFD66B928422A96009353B5 /* NewTabInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66B328422A96009353B5 /* NewTabInteractor.swift */; };
+		9CFD66BD28422D6F009353B5 /* BaseSearchBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CFD66BC28422D6F009353B5 /* BaseSearchBar.xib */; };
+		9CFD66BF28422F3E009353B5 /* BaseSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66BE28422F3E009353B5 /* BaseSearchBar.swift */; };
+		9CFD66C228423AEE009353B5 /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66C128423AED009353B5 /* URLConstants.swift */; };
+		9CFD66C628423D7B009353B5 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66C528423D7B009353B5 /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		9CFD66B128422A96009353B5 /* NewTabModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTabModels.swift; sourceTree = "<group>"; };
 		9CFD66B228422A96009353B5 /* NewTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTabViewController.swift; sourceTree = "<group>"; };
 		9CFD66B328422A96009353B5 /* NewTabInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTabInteractor.swift; sourceTree = "<group>"; };
+		9CFD66BC28422D6F009353B5 /* BaseSearchBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseSearchBar.xib; sourceTree = "<group>"; };
+		9CFD66BE28422F3E009353B5 /* BaseSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSearchBar.swift; sourceTree = "<group>"; };
+		9CFD66C128423AED009353B5 /* URLConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
+		9CFD66C528423D7B009353B5 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +120,9 @@
 		9CE593C02841FE2D0012EA87 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9CFD66C328423D5E009353B5 /* Extensions */,
+				9CFD66C028423ADD009353B5 /* Constants */,
+				9CFD66BA28422D49009353B5 /* CustomUI */,
 				9CFD669E28420FA9009353B5 /* BaseClasses */,
 				9CE5940B28420C050012EA87 /* Localization */,
 			);
@@ -200,6 +211,47 @@
 			path = NewTab;
 			sourceTree = "<group>";
 		};
+		9CFD66BA28422D49009353B5 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				9CFD66BB28422D5C009353B5 /* BaseSearchBar */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		9CFD66BB28422D5C009353B5 /* BaseSearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				9CFD66BC28422D6F009353B5 /* BaseSearchBar.xib */,
+				9CFD66BE28422F3E009353B5 /* BaseSearchBar.swift */,
+			);
+			path = BaseSearchBar;
+			sourceTree = "<group>";
+		};
+		9CFD66C028423ADD009353B5 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				9CFD66C128423AED009353B5 /* URLConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		9CFD66C328423D5E009353B5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9CFD66C428423D68009353B5 /* BuiltInExtensions */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9CFD66C428423D68009353B5 /* BuiltInExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				9CFD66C528423D7B009353B5 /* String+Extension.swift */,
+			);
+			path = BuiltInExtensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -258,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CFD66BD28422D6F009353B5 /* BaseSearchBar.xib in Resources */,
 				9CE593B82841FCDC0012EA87 /* LaunchScreen.storyboard in Resources */,
 				9CE593B52841FCDC0012EA87 /* Assets.xcassets in Resources */,
 				9CE5940F28420D240012EA87 /* README.md in Resources */,
@@ -280,9 +333,12 @@
 				9CFD66B728422A96009353B5 /* NewTabModels.swift in Sources */,
 				9CFD66B628422A96009353B5 /* NewTabRouter.swift in Sources */,
 				9CE593AC2841FCD90012EA87 /* AppDelegate.swift in Sources */,
+				9CFD66BF28422F3E009353B5 /* BaseSearchBar.swift in Sources */,
 				9CFD66B928422A96009353B5 /* NewTabInteractor.swift in Sources */,
 				9CFD66B528422A96009353B5 /* NewTabPresenter.swift in Sources */,
+				9CFD66C628423D7B009353B5 /* String+Extension.swift in Sources */,
 				9CE593AE2841FCD90012EA87 /* SceneDelegate.swift in Sources */,
+				9CFD66C228423AEE009353B5 /* URLConstants.swift in Sources */,
 				9CE593C5284200BE0012EA87 /* SplashViewController.swift in Sources */,
 				9CFD66A928420FA9009353B5 /* BaseNavigationController.swift in Sources */,
 				9CFD66AA28420FA9009353B5 /* BaseView.swift in Sources */,

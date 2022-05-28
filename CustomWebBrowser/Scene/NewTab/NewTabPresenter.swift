@@ -9,7 +9,8 @@
 import UIKit
 
 protocol NewTabPresenterProtocol: BaseViewProtocol {
-    func presentSomething()
+    func generateURL(with str: String)
+    func openURL(with req: URLRequest)
 }
 
 class NewTabPresenter: BasePresenter, NewTabPresenterProtocol {
@@ -27,12 +28,13 @@ class NewTabPresenter: BasePresenter, NewTabPresenterProtocol {
         self.baseView = viewController
     }
 
-    
-    func presentSomething() {
-        //Transform Response Model to Displayed Model
-        interactor?.startDoingSomething()
+    func generateURL(with str: String) {
+        interactor?.generateURL(with: str)
     }
     
+    func openURL(with req: URLRequest) {
+        view?.openURL(with: req)
+    }
     
     // MARK: - Transform Model-ViewModel
 
