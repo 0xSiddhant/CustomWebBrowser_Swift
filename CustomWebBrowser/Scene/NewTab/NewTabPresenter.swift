@@ -11,6 +11,7 @@ import UIKit
 protocol NewTabPresenterProtocol: BaseViewProtocol {
     func generateURL(with str: String)
     func openURL(with req: URLRequest)
+    func backToHomePage()
 }
 
 class NewTabPresenter: BasePresenter, NewTabPresenterProtocol {
@@ -33,9 +34,14 @@ class NewTabPresenter: BasePresenter, NewTabPresenterProtocol {
     }
     
     func openURL(with req: URLRequest) {
+        view?.showHideSearchView(true)
         view?.openURL(with: req)
     }
     
+    func backToHomePage() {
+        resetWebPage()
+        view?.showHideSearchView(false)
+    }
     // MARK: - Transform Model-ViewModel
 
 

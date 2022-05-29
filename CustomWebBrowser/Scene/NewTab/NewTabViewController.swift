@@ -11,11 +11,12 @@ import WebKit
 
 protocol NewTabViewProtocol: BaseView {
     func openURL(with req: URLRequest)
+    func showHideSearchView(_ isHidden: Bool)
 }
 
 class NewTabViewController: BaseViewController {
     var presenter: NewTabPresenterProtocol?
-
+    
     //MARK: - Outlets
     @IBOutlet weak var contentStackView: UIStackView!
     @IBOutlet weak var searchView: BaseSearchBar!
@@ -31,9 +32,9 @@ class NewTabViewController: BaseViewController {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
     }
-
+    
     deinit {
         webView.removeObserver(self, forKeyPath: "title")
         webView.removeObserver(self, forKeyPath: "estimatedProgress")
@@ -44,11 +45,14 @@ class NewTabViewController: BaseViewController {
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        searchView.searchText = { [weak self] str in
-            self?.presenter?.generateURL(with: str)
-        }
         
+        initView()
+        setUpWebkit()
+        
+        setNavTitle("Home Page", textAlignment: .center)
+    }
+    
+    private func setUpWebkit() {
         contentStackView.addArrangedSubview(webView)
         
         // For handling webview UI Activity
@@ -61,10 +65,9 @@ class NewTabViewController: BaseViewController {
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         //  Reading a web page’s title as it changes
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.title), options: .new, context: nil)
-
+        
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.canGoBack), options: .new, context: nil)
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.canGoForward), options: .new, context: nil)
-        initView()
     }
     
     private func initView() {
@@ -77,6 +80,10 @@ class NewTabViewController: BaseViewController {
         nextBtn.isEnabled = false
         
         updateProgessBar(value: 0.0)
+        
+        searchView.searchText = { [weak self] str in
+            self?.presenter?.generateURL(with: str)
+        }
     }
     
     // MARK:  Monitoring Website Activity
@@ -108,30 +115,11 @@ class NewTabViewController: BaseViewController {
     }
     
     @IBAction func homeBtnAction(_ sender: UIButton) {
-        //TODO: - Need to add clear cookies
-        webView.configuration.websiteDataStore.httpCookieStore.getAllCookies { cookies in
-            for cookie in cookies {
-                if cookie.name == "authentication" {
-                    self.webView.configuration.websiteDataStore.httpCookieStore.delete(cookie)
-                } else {
-                    print("\(cookie.name) is set to \(cookie.value)")
-                }
-            }
-        }
+        presenter?.backToHomePage()
     }
     
     @IBAction func moreBtnAction(_ sender: UIButton) {
         
-        let config = WKSnapshotConfiguration()
-        config.rect = CGRect(x: 0, y: 0, width: 150, height: 50)
-        
-        // If you don’t want a cropped image - i.e. you want the whole thing – just use nil instead of config.
-        webView.takeSnapshot(with: config) { image, error in
-            if let image = image {
-                //TODO: - Need to add share image functionality
-                print(image.size)
-            }
-        }
     }
     
     func updateProgessBar(value: Float) {
@@ -148,8 +136,12 @@ class NewTabViewController: BaseViewController {
 // MARK: - NewTabViewController
 extension NewTabViewController: NewTabViewProtocol {
     func openURL(with req: URLRequest) {
-        searchView.isHidden = true
         webView.load(req)
+    }
+    
+    func showHideSearchView(_ isHidden: Bool) {
+        searchView.textField.text = ""
+        CustomTransition.showHide(searchView, status: isHidden)
     }
 }
 
@@ -179,26 +171,26 @@ extension NewTabViewController: WKNavigationDelegate {
         stopLoading()
         
         //TODO: - Use this for creating History Page
-//        for page in webView.backForwardList.backList {
-//            print("User visited")
-//            print("\tTitle: \(page.title)\nOriginated From: \(page.initialURL)")
-//            print("\tFull Path: \(page.url.absoluteString)")
-//            print("-----------------")
-//        }
+        //        for page in webView.backForwardList.backList {
+        //            print("User visited")
+        //            print("\tTitle: \(page.title)\nOriginated From: \(page.initialURL)")
+        //            print("\tFull Path: \(page.url.absoluteString)")
+        //            print("-----------------")
+        //        }
         
         
         //TODO: - For Disabling Text Selection and keyboard event in Webpage
-//        webView.evaluateJavaScript(WKCustomScript.copyPasteSelectionDisableScript().source) { (result, error) in
-//            if let result = result {
-//                print(result)
-//            }
-//        }
-//
+        //        webView.evaluateJavaScript(WKCustomScript.copyPasteSelectionDisableScript().source) { (result, error) in
+        //            if let result = result {
+        //                print(result)
+        //            }
+        //        }
+        //
     }
     
     // Method called when url loading failed
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-           print(error.localizedDescription)
+        print(error.localizedDescription)
         updateProgessBar(value: 0.0)
     }
 }

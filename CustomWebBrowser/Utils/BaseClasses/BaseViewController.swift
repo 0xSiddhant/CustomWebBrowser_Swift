@@ -77,6 +77,11 @@ class BaseViewController: UIViewController {
 }
 
 extension BaseViewController: BaseView {
+    func resetWebPage() {
+        webView.load(URLRequest(url: URL(string: URLConstants.blankPage.rawValue)!))
+        setNavTitle("Home Page", textAlignment: .center)
+    }
+    
     @objc func startLoading() {
         webView.reload()
     }

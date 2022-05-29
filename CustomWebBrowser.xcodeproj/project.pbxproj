@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C53A38628433ED700C2E14D /* CustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A38528433ED700C2E14D /* CustomTransition.swift */; };
+		9C53A3882843411800C2E14D /* UtilMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C53A3872843411800C2E14D /* UtilMethods.swift */; };
 		9CE593AC2841FCD90012EA87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE593AB2841FCD90012EA87 /* AppDelegate.swift */; };
 		9CE593AE2841FCD90012EA87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE593AD2841FCD90012EA87 /* SceneDelegate.swift */; };
 		9CE593B02841FCD90012EA87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE593AF2841FCD90012EA87 /* ViewController.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C53A38528433ED700C2E14D /* CustomTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransition.swift; sourceTree = "<group>"; };
+		9C53A3872843411800C2E14D /* UtilMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilMethods.swift; sourceTree = "<group>"; };
 		9CE593A82841FCD90012EA87 /* CustomWebBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomWebBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CE593AB2841FCD90012EA87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CE593AD2841FCD90012EA87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C53A38428433EA800C2E14D /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				9C53A38528433ED700C2E14D /* CustomTransition.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
 		9CE5939F2841FCD90012EA87 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +142,8 @@
 		9CE593C02841FE2D0012EA87 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9C53A3872843411800C2E14D /* UtilMethods.swift */,
+				9C53A38428433EA800C2E14D /* Animation */,
 				9CE8ACA22842B842003ECEC7 /* Settings */,
 				9CFD66C328423D5E009353B5 /* Extensions */,
 				9CFD66C028423ADD009353B5 /* Constants */,
@@ -365,6 +379,7 @@
 				9CFD66A828420FA9009353B5 /* BasePresenter.swift in Sources */,
 				9CFD66B728422A96009353B5 /* NewTabModels.swift in Sources */,
 				9CFD66C9284247F8009353B5 /* UIColor+Extension.swift in Sources */,
+				9C53A3882843411800C2E14D /* UtilMethods.swift in Sources */,
 				9CFD66B628422A96009353B5 /* NewTabRouter.swift in Sources */,
 				9CE593AC2841FCD90012EA87 /* AppDelegate.swift in Sources */,
 				9CFD66BF28422F3E009353B5 /* BaseSearchBar.swift in Sources */,
@@ -378,6 +393,7 @@
 				9CFD66AA28420FA9009353B5 /* BaseView.swift in Sources */,
 				9CFD66A628420FA9009353B5 /* BaseViewController.swift in Sources */,
 				9CE8ACA42842B860003ECEC7 /* WKCustomConfigurator.swift in Sources */,
+				9C53A38628433ED700C2E14D /* CustomTransition.swift in Sources */,
 				9CE8AC9F284298AB003ECEC7 /* WKWebView+Extension.swift in Sources */,
 				9CFD66B828422A96009353B5 /* NewTabViewController.swift in Sources */,
 				9CFD66A728420FA9009353B5 /* BaseInteractor.swift in Sources */,

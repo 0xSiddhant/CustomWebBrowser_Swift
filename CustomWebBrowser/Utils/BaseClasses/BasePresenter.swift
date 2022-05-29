@@ -21,4 +21,8 @@ class BasePresenter: BaseViewProtocol {
     func showGeneralError(action: @escaping () -> Void) {
         
     }
+    
+    func resetWebPage() {
+        baseView?.resetWebPage()
+    }
 }

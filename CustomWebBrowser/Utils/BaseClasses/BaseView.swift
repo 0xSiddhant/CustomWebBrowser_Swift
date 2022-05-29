@@ -12,10 +12,12 @@ public protocol BaseView: NSObjectProtocol {
     func stopLoading()
     func showError(message: String)
     func showGeneralError(title: String, message: String, completion: @escaping (() -> Void), buttonTitle: String)
+    func resetWebPage()
 }
 
 protocol BaseViewProtocol: AnyObject {
     func startLoading()
     func stopLoading()
     func showGeneralError(action: @escaping () -> Void)
+    func resetWebPage()
 }

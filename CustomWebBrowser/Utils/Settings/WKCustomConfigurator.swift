@@ -33,4 +33,18 @@ class WKCustomConfigurator {
         return userContentController
     }
     
+    static func clearCookies(webView: WKWebView) {
+        webView.configuration.websiteDataStore.httpCookieStore.getAllCookies { cookies in
+            for cookie in cookies {
+//                if cookie.name == "authentication" {
+//                    webView.configuration.websiteDataStore.httpCookieStore.delete(cookie)
+//                } else {
+//                    print("\(cookie.name) is set to \(cookie.value)")
+//                }
+                webView.configuration.websiteDataStore.httpCookieStore.delete(cookie)
+            }
+        }
+
+    }
+    
 }
