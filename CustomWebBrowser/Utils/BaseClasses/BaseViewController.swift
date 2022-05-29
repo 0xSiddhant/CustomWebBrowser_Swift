@@ -16,6 +16,8 @@ class BaseViewController: UIViewController {
     
     lazy var webView: WKWebView = {
         let webView = WKWebView(frame: .zero, configuration: WKCustomConfigurator.create())
+        webView.scrollView.refreshControl = UIRefreshControl()
+        webView.scrollView.refreshControl?.addTarget(self, action: #selector(startLoading), for: .valueChanged)
         return webView
     }()
     
@@ -75,12 +77,12 @@ class BaseViewController: UIViewController {
 }
 
 extension BaseViewController: BaseView {
-    func startLoading() {
-        
+    @objc func startLoading() {
+        webView.reload()
     }
     
     func stopLoading() {
-        
+        webView.scrollView.refreshControl?.endRefreshing()
     }
     
     func showError(message: String) {

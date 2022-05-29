@@ -163,6 +163,7 @@ extension NewTabViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         webView.printURLContent()
+        stopLoading()
         //TODO: - Use this for creating History Page
         for page in webView.backForwardList.backList {
             print("User visited")
