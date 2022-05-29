@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t7E-M7-QA1">
-                                <rect key="frame" x="0.0" y="44" width="414" height="789"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="784"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1N-n4-Z4L" customClass="BaseSearchBar" customModule="CustomWebBrowser" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="789"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="784"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="250" constant="50" id="taP-Fq-Zgl"/>
@@ -30,10 +31,10 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMx-NX-Gba">
-                                <rect key="frame" x="0.0" y="833" width="414" height="63"/>
+                                <rect key="frame" x="0.0" y="828" width="414" height="68"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="n0g-ZL-sWE">
-                                        <rect key="frame" x="4" y="2" width="406" height="45"/>
+                                        <rect key="frame" x="4" y="7" width="406" height="45"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWl-Yn-jp0">
                                                 <rect key="frame" x="0.0" y="0.0" width="78" height="45"/>
@@ -83,12 +84,19 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TAW-5g-UuK">
+                                        <rect key="frame" x="0.0" y="1" width="414" height="4"/>
+                                        <color key="tintColor" name="Primary"/>
+                                    </progressView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="n0g-ZL-sWE" secondAttribute="trailing" constant="4" id="4z9-CX-8yl"/>
+                                    <constraint firstAttribute="trailing" secondItem="TAW-5g-UuK" secondAttribute="trailing" id="6kt-kX-AwO"/>
+                                    <constraint firstItem="TAW-5g-UuK" firstAttribute="top" secondItem="CMx-NX-Gba" secondAttribute="top" constant="1" id="Ek7-Y8-0Gc"/>
+                                    <constraint firstItem="n0g-ZL-sWE" firstAttribute="top" secondItem="TAW-5g-UuK" secondAttribute="bottom" constant="2" id="GRy-bJ-cVd"/>
                                     <constraint firstItem="n0g-ZL-sWE" firstAttribute="leading" secondItem="CMx-NX-Gba" secondAttribute="leading" constant="4" id="J42-yq-ivQ"/>
-                                    <constraint firstItem="n0g-ZL-sWE" firstAttribute="top" secondItem="CMx-NX-Gba" secondAttribute="top" constant="2" id="emL-sH-7yF"/>
+                                    <constraint firstItem="TAW-5g-UuK" firstAttribute="leading" secondItem="CMx-NX-Gba" secondAttribute="leading" id="geu-dy-ST1"/>
                                     <constraint firstAttribute="bottom" secondItem="n0g-ZL-sWE" secondAttribute="bottom" constant="16" id="s0M-VE-o28"/>
                                 </constraints>
                             </view>
@@ -112,6 +120,7 @@
                         <outlet property="homeBtn" destination="JXF-az-2m8" id="96v-gR-ZsH"/>
                         <outlet property="moreBtn" destination="eC8-IZ-5fM" id="AvL-bE-7fe"/>
                         <outlet property="nextBtn" destination="9VO-bU-uQv" id="Av4-83-dH0"/>
+                        <outlet property="progressBar" destination="TAW-5g-UuK" id="Fgt-YZ-98m"/>
                         <outlet property="searchView" destination="i1N-n4-Z4L" id="tSC-up-QSh"/>
                         <outletCollection property="btnCollections" destination="a8O-xC-9XS" collectionClass="NSMutableArray" id="Q75-Y3-Hmt"/>
                         <outletCollection property="btnCollections" destination="eC8-IZ-5fM" collectionClass="NSMutableArray" id="Chl-cu-OgO"/>
@@ -131,6 +140,9 @@
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="Primary">
+            <color red="0.9882352941176471" green="0.54117647058823526" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

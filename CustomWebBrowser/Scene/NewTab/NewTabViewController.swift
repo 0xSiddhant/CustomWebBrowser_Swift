@@ -19,7 +19,6 @@ class NewTabViewController: BaseViewController {
     //MARK: - Outlets
     @IBOutlet weak var contentStackView: UIStackView!
     @IBOutlet weak var searchView: BaseSearchBar!
-//    @IBOutlet weak var webView: WKWebView!
     
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var nextBtn: UIButton!
@@ -27,6 +26,7 @@ class NewTabViewController: BaseViewController {
     @IBOutlet weak var homeBtn: UIButton!
     @IBOutlet weak var moreBtn: UIButton!
     
+    @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet var btnCollections: [UIButton]!
     
     override func awakeFromNib() {
@@ -75,13 +75,15 @@ class NewTabViewController: BaseViewController {
         
         backBtn.isEnabled = false
         nextBtn.isEnabled = false
+        
+        updateProgessBar(value: 0.0)
     }
     
     // MARK:  Monitoring Website Activity
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
         if keyPath == "estimatedProgress" {
-            print(Float(webView.estimatedProgress))
+            updateProgessBar(value: Float(webView.estimatedProgress))
         } else if keyPath == "title" {
             if let title = webView.title {
                 setNavTitle(title)
@@ -131,6 +133,16 @@ class NewTabViewController: BaseViewController {
             }
         }
     }
+    
+    func updateProgessBar(value: Float) {
+        if value == 1.0 {
+            progressBar.isHidden = true
+            progressBar.setProgress(0.0, animated: false)
+        } else {
+            progressBar.isHidden = value == 0.0
+            progressBar.setProgress(value, animated: true)
+        }
+    }
 }
 
 // MARK: - NewTabViewController
@@ -144,12 +156,12 @@ extension NewTabViewController: NewTabViewProtocol {
 //MARK: - Webkit Navigation Delegate
 extension NewTabViewController: WKNavigationDelegate {
     
+    // Method called before loading url
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-//        progressView.isHidden = false
     }
     
+    // Method called at the time of loading url
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        
         if let url = navigationAction.request.url,
            let host = url.host {
             if host == "www.apple.com" {
@@ -161,16 +173,18 @@ extension NewTabViewController: WKNavigationDelegate {
         decisionHandler(.allow)
     }
     
+    // Method called when url loading is completed
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         webView.printURLContent()
         stopLoading()
+        
         //TODO: - Use this for creating History Page
-        for page in webView.backForwardList.backList {
-            print("User visited")
-            print("\tTitle: \(page.title)\nOriginated From: \(page.initialURL)")
-            print("\tFull Path: \(page.url.absoluteString)")
-            print("-----------------")
-        }
+//        for page in webView.backForwardList.backList {
+//            print("User visited")
+//            print("\tTitle: \(page.title)\nOriginated From: \(page.initialURL)")
+//            print("\tFull Path: \(page.url.absoluteString)")
+//            print("-----------------")
+//        }
         
         
         //TODO: - For Disabling Text Selection and keyboard event in Webpage
@@ -180,11 +194,12 @@ extension NewTabViewController: WKNavigationDelegate {
 //            }
 //        }
 //
-//        progressView.isHidden = true
     }
     
+    // Method called when url loading failed
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
            print(error.localizedDescription)
+        updateProgessBar(value: 0.0)
     }
 }
 
