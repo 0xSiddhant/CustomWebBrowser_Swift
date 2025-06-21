@@ -14,13 +14,6 @@ class BaseViewController: UIViewController {
     weak var scrollView: UIScrollView?
     var documentUrl: URL?
     
-    lazy var webView: WKWebView = {
-        let webView = WKWebView(frame: .zero, configuration: WKCustomConfigurator.create())
-        webView.scrollView.refreshControl = UIRefreshControl()
-        webView.scrollView.refreshControl?.addTarget(self, action: #selector(startLoading), for: .valueChanged)
-        return webView
-    }()
-    
     open override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
@@ -77,22 +70,9 @@ class BaseViewController: UIViewController {
 }
 
 extension BaseViewController: BaseView {
-    func resetWebPage() {
-        webView.load(URLRequest(url: URL(string: URLConstants.blankPage.rawValue)!))
-        setNavTitle("Home Page", textAlignment: .center)
-    }
+    func startLoading() { }
     
-    @objc func startLoading() {
-        webView.reload()
-    }
-    
-    func stopLoading() {
-        webView.scrollView.refreshControl?.endRefreshing()
-    }
-    
-    func showError(message: String) {
-        
-    }
+    func stopLoading() { }
     
     func showGeneralError(title: String, message: String, completion: @escaping (() -> Void), buttonTitle: String = "OK") {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)

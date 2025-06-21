@@ -8,7 +8,9 @@
 
 import UIKit
 
-protocol NewTabPresenterProtocol: BaseViewProtocol {
+protocol NewTabPresenterProtocol: BasePresenterProtocol {
+    var scriptHandler: WBScriptMessageManager { get }
+    
     func generateURL(with str: String)
     func openURL(with req: URLRequest)
     func backToHomePage()
@@ -19,9 +21,16 @@ class NewTabPresenter: BasePresenter, NewTabPresenterProtocol {
     var interactor: NewTabInteractorProtocol?
     var router: NewTabRouterProtocol?
 
+    var scriptHandler: WBScriptMessageManager
+    
     init(viewController: NewTabViewProtocol,
                   interactor: NewTabInteractorProtocol,
                   router: NewTabRouterProtocol) {
+        
+        scriptHandler = .init(
+            handlers: FileDownloadHandler()
+        )
+        
         super.init()
         self.view = viewController
         self.interactor = interactor
@@ -39,8 +48,16 @@ class NewTabPresenter: BasePresenter, NewTabPresenterProtocol {
     }
     
     func backToHomePage() {
-        resetWebPage()
+        view?.resetWebPage()
         view?.showHideSearchView(false)
+    }
+    
+    override func startLoading() {
+        view?.startWebLoading()
+    }
+    
+    override func stopLoading() {
+        view?.stopWebLoading()
     }
     // MARK: - Transform Model-ViewModel
 

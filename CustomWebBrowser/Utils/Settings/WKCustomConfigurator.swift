@@ -7,7 +7,7 @@
 
 import WebKit
 
-class WKCustomConfigurator {
+enum WKCustomConfigurator {
     
     static func create() -> WKWebViewConfiguration {
         
@@ -29,6 +29,7 @@ class WKCustomConfigurator {
 
         let userContentController = WKUserContentController()
         userContentController.addUserScript(WKCustomScript.copyPasteSelectionDisableScript())
+        userContentController.addUserScript(WKCustomScript.setMobileScreenViewPortScript())
         
         return userContentController
     }

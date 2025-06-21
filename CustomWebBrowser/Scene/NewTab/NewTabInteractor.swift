@@ -14,7 +14,11 @@ protocol NewTabInteractorProtocol {
 }
 
 final class NewTabInteractor: BaseInteractor, NewTabInteractorProtocol {
-    var presenter: NewTabPresenterProtocol?
+    weak var presenter: NewTabPresenterProtocol? {
+        didSet {
+            self.basePresenter = presenter
+        }
+    }
         
     // MARK: - API calls
     

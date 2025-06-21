@@ -10,6 +10,10 @@ import UIKit
 import WebKit
 
 protocol NewTabViewProtocol: BaseView {
+    func startWebLoading()
+    func stopWebLoading()
+    func resetWebPage()
+    
     func openURL(with req: URLRequest)
     func showHideSearchView(_ isHidden: Bool)
 }
@@ -30,14 +34,26 @@ class NewTabViewController: BaseViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet var btnCollections: [UIButton]!
     
+    lazy var webView: WKWebView = {
+        let configuraton = WKCustomConfigurator.create()
+        if let presenter {
+            configuraton.addScriptMessageHandler(presenter.scriptHandler)            
+        }
+        let webView = WKWebView(frame: .zero, configuration: configuraton)
+        webView.scrollView.refreshControl = UIRefreshControl()
+        webView.scrollView.refreshControl?.addTarget(self, action: #selector(startWebLoading), for: .valueChanged)
+        return webView
+    }()
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
     
     deinit {
-        webView.removeObserver(self, forKeyPath: "title")
-        webView.removeObserver(self, forKeyPath: "estimatedProgress")
+        webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.title))
+        webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress))
         webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.canGoBack))
         webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.canGoForward))
     }
@@ -135,6 +151,20 @@ class NewTabViewController: BaseViewController {
 
 // MARK: - NewTabViewController
 extension NewTabViewController: NewTabViewProtocol {
+    @objc
+    func startWebLoading() {
+        webView.reload()
+    }
+    
+    func stopWebLoading() {
+        webView.scrollView.refreshControl?.endRefreshing()
+    }
+    
+    func resetWebPage() {
+        webView.load(URLRequest(url: URL(string: URLConstants.blankPage.rawValue)!))
+        setNavTitle("Home Page", textAlignment: .center)
+    }
+    
     func openURL(with req: URLRequest) {
         webView.load(req)
     }
@@ -150,6 +180,21 @@ extension NewTabViewController: WKNavigationDelegate {
     
     // Method called before loading url
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        
+//        if let url = webView.url, String(describing: url).starts(with: "whatsapp://") {
+//            let whatsAppUrl = String(describing: url).replacingOccurrences(of: "whatsapp://", with: "https://api.whatsapp.com/")
+//            //print("start loading whatsapp", webView.url as Any)
+//            UIApplication.shared.open(URL(string: whatsAppUrl) ?? url, options: [:], completionHandler: nil)
+//        } else if let url = webView.url, String(describing: url).starts(with: "tel:") {
+//            let whatsAppUrl = url.absoluteString.replacingOccurrences(of: "tel:", with: "tel://")
+//            UIApplication.shared.open(URL(string: whatsAppUrl) ?? url, options: [:], completionHandler: nil)
+//        } else if let url = webView.url, String(describing: url).starts(with: "mailto:") {
+//            let whatsAppUrl = url.absoluteString.replacingOccurrences(of: "mailto:", with: "mailto://")
+//            UIApplication.shared.open(URL(string: whatsAppUrl) ?? url, options: [:], completionHandler: nil)
+//        } else {
+//            SVProgressHUD.show()
+//            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+//        }
     }
     
     // Method called at the time of loading url
@@ -165,10 +210,15 @@ extension NewTabViewController: WKNavigationDelegate {
         decisionHandler(.allow)
     }
     
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+        print(#function)
+        decisionHandler(.allow)
+    }
+    
     // Method called when url loading is completed
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         webView.printURLContent()
-        stopLoading()
+        stopWebLoading()
         
         //TODO: - Use this for creating History Page
         //        for page in webView.backForwardList.backList {

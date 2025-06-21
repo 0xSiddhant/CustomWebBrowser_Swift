@@ -7,22 +7,19 @@
 
 import UIKit
 
-class BasePresenter: BaseViewProtocol {
+class BasePresenter: BasePresenterProtocol {
+    
     weak var baseView: BaseView?
     
     func startLoading() {
-        self.baseView?.startLoading()
+        baseView?.startLoading()
     }
     
     func stopLoading() {
-        self.baseView?.stopLoading()
+        baseView?.stopLoading()
     }
     
-    func showGeneralError(action: @escaping () -> Void) {
-        
-    }
-    
-    func resetWebPage() {
-        baseView?.resetWebPage()
+    func showGeneralError(title: String, message: String, completion: @escaping () -> Void, buttonTitle: String) {
+        baseView?.showGeneralError(title: title, message: message, completion: completion, buttonTitle: buttonTitle)
     }
 }

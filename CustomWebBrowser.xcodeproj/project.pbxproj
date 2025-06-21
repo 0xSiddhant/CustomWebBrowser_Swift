@@ -22,6 +22,10 @@
 		9CE8ACA12842AF61003ECEC7 /* URLStandard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE8ACA02842AF61003ECEC7 /* URLStandard.swift */; };
 		9CE8ACA42842B860003ECEC7 /* WKCustomConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE8ACA32842B860003ECEC7 /* WKCustomConfigurator.swift */; };
 		9CE8ACA62842B940003ECEC7 /* WKCustomScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE8ACA52842B940003ECEC7 /* WKCustomScript.swift */; };
+		9CFCBA8D2E06F47E0024DFE8 /* WBGlobalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFCBA8C2E06F47E0024DFE8 /* WBGlobalSettings.swift */; };
+		9CFCBA8F2E06F4B20024DFE8 /* WBScriptMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFCBA8E2E06F4B20024DFE8 /* WBScriptMessageManager.swift */; };
+		9CFCBA922E06F7FF0024DFE8 /* FileDownloadHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFCBA912E06F7FF0024DFE8 /* FileDownloadHandler.swift */; };
+		9CFCBA942E06F9C80024DFE8 /* WKWebViewConfiguration+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFCBA932E06F9C80024DFE8 /* WKWebViewConfiguration+Extension.swift */; };
 		9CFD66A628420FA9009353B5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66A028420FA9009353B5 /* BaseViewController.swift */; };
 		9CFD66A728420FA9009353B5 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66A128420FA9009353B5 /* BaseInteractor.swift */; };
 		9CFD66A828420FA9009353B5 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD66A228420FA9009353B5 /* BasePresenter.swift */; };
@@ -59,6 +63,10 @@
 		9CE8ACA02842AF61003ECEC7 /* URLStandard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLStandard.swift; sourceTree = "<group>"; };
 		9CE8ACA32842B860003ECEC7 /* WKCustomConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCustomConfigurator.swift; sourceTree = "<group>"; };
 		9CE8ACA52842B940003ECEC7 /* WKCustomScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKCustomScript.swift; sourceTree = "<group>"; };
+		9CFCBA8C2E06F47E0024DFE8 /* WBGlobalSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBGlobalSettings.swift; sourceTree = "<group>"; };
+		9CFCBA8E2E06F4B20024DFE8 /* WBScriptMessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBScriptMessageManager.swift; sourceTree = "<group>"; };
+		9CFCBA912E06F7FF0024DFE8 /* FileDownloadHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadHandler.swift; sourceTree = "<group>"; };
+		9CFCBA932E06F9C80024DFE8 /* WKWebViewConfiguration+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebViewConfiguration+Extension.swift"; sourceTree = "<group>"; };
 		9CFD66A028420FA9009353B5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9CFD66A128420FA9009353B5 /* BaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
 		9CFD66A228420FA9009353B5 /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
@@ -214,10 +222,21 @@
 		9CE8ACA22842B842003ECEC7 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				9CFCBA902E06F7D20024DFE8 /* MessageHandlers */,
 				9CE8ACA32842B860003ECEC7 /* WKCustomConfigurator.swift */,
 				9CE8ACA52842B940003ECEC7 /* WKCustomScript.swift */,
+				9CFCBA8C2E06F47E0024DFE8 /* WBGlobalSettings.swift */,
+				9CFCBA8E2E06F4B20024DFE8 /* WBScriptMessageManager.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		9CFCBA902E06F7D20024DFE8 /* MessageHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				9CFCBA912E06F7FF0024DFE8 /* FileDownloadHandler.swift */,
+			);
+			path = MessageHandlers;
 			sourceTree = "<group>";
 		};
 		9CFD669E28420FA9009353B5 /* BaseClasses */ = {
@@ -235,12 +254,12 @@
 		9CFD66AD28422A82009353B5 /* NewTab */ = {
 			isa = PBXGroup;
 			children = (
-				9CFD66AE28422A96009353B5 /* NewTabStoryboard.storyboard */,
+				9CFD66B328422A96009353B5 /* NewTabInteractor.swift */,
+				9CFD66B128422A96009353B5 /* NewTabModels.swift */,
 				9CFD66AF28422A96009353B5 /* NewTabPresenter.swift */,
 				9CFD66B028422A96009353B5 /* NewTabRouter.swift */,
-				9CFD66B128422A96009353B5 /* NewTabModels.swift */,
+				9CFD66AE28422A96009353B5 /* NewTabStoryboard.storyboard */,
 				9CFD66B228422A96009353B5 /* NewTabViewController.swift */,
-				9CFD66B328422A96009353B5 /* NewTabInteractor.swift */,
 			);
 			path = NewTab;
 			sourceTree = "<group>";
@@ -284,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				9CFD66C528423D7B009353B5 /* String+Extension.swift */,
+				9CFCBA932E06F9C80024DFE8 /* WKWebViewConfiguration+Extension.swift */,
 			);
 			path = BuiltInExtensions;
 			sourceTree = "<group>";
@@ -379,17 +399,21 @@
 				9CFD66A828420FA9009353B5 /* BasePresenter.swift in Sources */,
 				9CFD66B728422A96009353B5 /* NewTabModels.swift in Sources */,
 				9CFD66C9284247F8009353B5 /* UIColor+Extension.swift in Sources */,
+				9CFCBA8F2E06F4B20024DFE8 /* WBScriptMessageManager.swift in Sources */,
 				9C53A3882843411800C2E14D /* UtilMethods.swift in Sources */,
 				9CFD66B628422A96009353B5 /* NewTabRouter.swift in Sources */,
 				9CE593AC2841FCD90012EA87 /* AppDelegate.swift in Sources */,
 				9CFD66BF28422F3E009353B5 /* BaseSearchBar.swift in Sources */,
 				9CFD66B928422A96009353B5 /* NewTabInteractor.swift in Sources */,
 				9CFD66B528422A96009353B5 /* NewTabPresenter.swift in Sources */,
+				9CFCBA922E06F7FF0024DFE8 /* FileDownloadHandler.swift in Sources */,
 				9CFD66C628423D7B009353B5 /* String+Extension.swift in Sources */,
 				9CE593AE2841FCD90012EA87 /* SceneDelegate.swift in Sources */,
+				9CFCBA942E06F9C80024DFE8 /* WKWebViewConfiguration+Extension.swift in Sources */,
 				9CFD66C228423AEE009353B5 /* URLConstants.swift in Sources */,
 				9CE593C5284200BE0012EA87 /* SplashViewController.swift in Sources */,
 				9CFD66A928420FA9009353B5 /* BaseNavigationController.swift in Sources */,
+				9CFCBA8D2E06F47E0024DFE8 /* WBGlobalSettings.swift in Sources */,
 				9CFD66AA28420FA9009353B5 /* BaseView.swift in Sources */,
 				9CFD66A628420FA9009353B5 /* BaseViewController.swift in Sources */,
 				9CE8ACA42842B860003ECEC7 /* WKCustomConfigurator.swift in Sources */,

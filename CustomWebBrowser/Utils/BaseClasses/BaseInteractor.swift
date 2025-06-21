@@ -8,4 +8,5 @@
 import UIKit
 
 class BaseInteractor {
+    weak var basePresenter: BasePresenterProtocol?
 }
